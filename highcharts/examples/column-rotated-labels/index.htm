@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>How much pet owners are spending on different kinds of animals?</title>
+
+		<style type="text/css">
+#container {
+    height: 400px; 
+}
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+		</style>
+	</head>
+	<body>
+<script src="../../code/highcharts.js"></script>
+<script src="../../code/modules/exporting.js"></script>
+<script src="../../code/modules/export-data.js"></script>
+<script src="../../code/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        On average, we found that dog owners spend more than cat owners, but owners of small mammals (like guinea pigs, hamsters, and gerbils) spend more than dog and cat owners combined! Fish and rabbits make the cheapest pets, followed closely by mice and rats.
+    </p>
+
+
+    <p class="highcharts-description">
+        What’s in the “other” category that’s costing so much? Your guess is as good as ours. Alligators? Wolves? Zebras? Dinosaurs? Whatever exotic animals these people are keeping sure cost a pretty penny to own!
+    </p>
+
+</figure>
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'The average cost of different kinds of pets per month'
+    },
+    subtitle: {
+        text: 'Source: <a href="https://www.opploans.com/oppu/articles/how-much-does-your-state-spend-on-pets-we-have-the-answer-and-more-for-national-pet-day/">Opploans</a>'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -30,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Cost (dollars)'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+    },
+    series: [{
+        name: 'Cost',
+        data: [
+            ['Birds', 113.89],
+            ['Cats', 92.98],
+            ['Dogs', 139.8],
+            ['Fish', 63.53],
+            ['Mice', 80],
+            ['Rabbits', 65],
+            ['Reptiles', 116.63],
+            ['Small Mammals', 251.82],
+            ['Other', 351.67],
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#01579B',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+		</script>
+	</body>
+</html>

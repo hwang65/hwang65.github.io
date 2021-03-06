@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>How much pet owners are spending on different kinds of animals?</title>
+
+		<style type="text/css">
+#container {
+    height: 400px;
+}
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+#sliders td input[type=range] {
+    display: inline;
+}
+#sliders td {
+    padding-right: 1em;
+    white-space: nowrap;
+}
+
+		</style>
+	</head>
+	<body>
+<script src="../../code/highcharts.js"></script>
+<script src="../../code/highcharts-3d.js"></script>
+<script src="../../code/modules/exporting.js"></script>
+<script src="../../code/modules/export-data.js"></script>
+<script src="../../code/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        On average, we found that dog owners spend more than cat owners, but owners of small mammals (like guinea pigs, hamsters, and gerbils) spend more than dog and cat owners combined! Fish and rabbits make the cheapest pets, followed closely by mice and rats.
+    </p>
+
+    <p class="highcharts-description">
+        What’s in the “other” category that’s costing so much? Your guess is as good as ours. Alligators? Wolves? Zebras? Dinosaurs? Whatever exotic animals these people are keeping sure cost a pretty penny to own!
+    </p>
+
+
+    <div id="sliders">
+        <table>
+            <tr>
+                <td><label for="alpha">Alpha Angle</label></td>
+                <td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+            </tr>
+            <tr>
+                <td><label for="beta">Beta Angle</label></td>
+                <td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+            </tr>
+            <tr>
+                <td><label for="depth">Depth</label></td>
+                <td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+            </tr>
+        </table>
+    </div>
+</figure>
+
+
+		<script type="text/javascript">
+// Set up the chart
+const chart = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container',
+        type: 'column',
+        backgroundColor: '#e5fff9',
+        options3d: {
+            enabled: true,
+            alpha: 15,
+            beta: 15,
+            depth: 50,
+            viewDistance: 25
+        }
+    },
+    title: {
+        text: 'Expenses on different kinds of pets per month',
+        style: {"color": "#4283D5", "fontSize": "18px"}
+    },
+    subtitle: {
+        text: 'Source: <a href="https://www.opploans.com/oppu/articles/how-much-does-your-state-spend-on-pets-we-have-the-answer-and-more-for-national-pet-day/">Opploans</a>',
+        style: {"color": "#42B3D5"}
+    },
+    plotOptions: {
+        column: {
+            depth: 25
+        }
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -30,
+            style: {
+                color: '#42B3D5',
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Pet Expenses (dollars)',
+            style: {"color": "#42B3D5"}
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Pet Expenses: <b>{point.y:.1f} dollars</b>'
+    },
+    series: [{
+        name: 'Cost',
+        data: [
+            ['Birds', 113.89],
+            ['Cats', 92.98],
+            ['Dogs', 139.8],
+            ['Fish', 63.53],
+            ['Mice', 80],
+            ['Rabbits', 65],
+            ['Reptiles', 116.63],
+            ['Small Mammals', 251.82],
+            ['Other', 351.67],
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: 0,
+            color: '#006bb3',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '10px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+
+
+function showValues() {
+    document.getElementById('alpha-value').innerHTML = chart.options.chart.options3d.alpha;
+    document.getElementById('beta-value').innerHTML = chart.options.chart.options3d.beta;
+    document.getElementById('depth-value').innerHTML = chart.options.chart.options3d.depth;
+}
+
+// Activate the sliders
+document.querySelectorAll('#sliders input').forEach(input => input.addEventListener('input', e => {
+    chart.options.chart.options3d[e.target.id] = parseFloat(e.target.value);
+    showValues();
+    chart.redraw(false);
+}));
+
+showValues();
+		</script>
+	</body>
+</html>
