@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Animation: Unfold</title>
-    <meta name="A colorful world" content="Animation: Unfold - A-Frame">
+    <meta name="A colorful world" content="Animation: Unfold and Rotate - A-Frame">
     <script src="../../../dist/aframe-master.js"></script>
   </head>
   <body>
@@ -20,14 +20,14 @@
       <!-- Series of nested boards that unfold one by one. -->
       <a-entity position="0 2 -8" scale="1 1 1"
                 animation__position="attribute: position; to: 0 2 -8; dur: 2000"
-                animation__rotation="property: rotation; from: 0 60 0; to: 0 30 0; dur: 2500">
+                animation__rotation="property: rotation; from: 0 60 0; to: 0 30 0; dur: 1500">
 
         <!-- Pivot and position are used to set the "hinge" of each board to it's top edge. -->
-        <a-box mixin="board unhinge" color="#F16745" rotation="-20 180 0" animation="delay: 2000">
-          <a-box mixin="board unhinge" color="#FFC65D" rotation="-175 180 0" animation="delay: 1250">
-            <a-box mixin="board unhinge" color="#7BC8A4" rotation="-180 180 0" animation="delay: 1500">
-              <a-box mixin="board unhinge" color="#4CC3D9" rotation="-180 180 0" animation="delay: 1750">
-                <a-box mixin="board unhinge" color="#93648D" rotation="-180 180 0" animation="delay: 2000">
+        <a-box mixin="board unhinge" color="#F16745" rotation="-20 180 0" animation="delay: 1500">
+          <a-box mixin="board unhinge" color="#FFC65D" rotation="-175 180 0" animation="delay: 750">
+            <a-box mixin="board unhinge" color="#7BC8A4" rotation="-180 180 0" animation="delay: 1000">
+              <a-box mixin="board unhinge" color="#4CC3D9" rotation="-180 180 0" animation="delay: 1250">
+                <a-box mixin="board unhinge" color="#93648D" rotation="-180 180 0" animation="delay: 1500">
               </a-box>
             </a-box>
           </a-box>
