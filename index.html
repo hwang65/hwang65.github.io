@@ -1,44 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
     <title>Welcome!</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
+
     
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
     
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>  
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
   <body>
-    <h1>Welcome to my world!</h1>
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://hwang65.github.io">hwang65.github.io</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://hwang65.github.io">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/hwang65/hwang65.github.io">Github Repository</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">My Works</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown01">
+            <li><a class="dropdown-item" href="https://hwang65.github.io/highcharts/examples/3d-column-interactive/index.htm">Interative 3D High Chart</a></li>
+            <li><a class="dropdown-item" href="https://hwang65.github.io/highcharts/examples/column-rotated-labels/index.htm">Simple Column High Chart </a></li>
+            <li><a class="dropdown-item" href="https://hwang65.github.io/aframenew/examples/animation/unfold/index.html">Animation A-frame</a></li>
+            <li><a class="dropdown-item" href="https://hwang65.github.io/aframenew/examples/boilerplate/hello-world/index.html">Snowman A-frame</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <div class="starter-template text-left py-5 px-3">
+  <h1>Welcome to my world!</h1>
     
     <img src="huirong.jpg" width="300"></img>
 
-    <p>
-      I'm Huirong Wang, a Magazine, Newspaper and Online Journalism graduate student in Newhouse School.
-    </p>
+    <p class="lead">👋 Hi! I'm Huirong Wang.<br> 🎓 I'm a Magazine, Newspaper and Online Journalism graduate student in Newhouse School.<br> 👀 I'm currently learning Emerging Media Paltforms! Take a look at my works!</p>
+  
+  
+
+  <p class="body"><br>Curious about how much American families are spending on different kinds of animals?<br>📊 Here are the answer and more!
+   </p>
+
+  <embed src="https://hwang65.github.io/highcharts/examples/3d-column-interactive/index.htm" width="800" height="650">
+  </embed>
 
 
-   <p>Curious about how much American families are spending on different kinds of animals？Here are the answer and more!
-    </p>
+  <p class="body"><br> 😄 Here's an A-frame animation I made.
+  </p>
 
-    <embed src="https://hwang65.github.io/highcharts/examples/3d-column-interactive/index.htm" width="800" height="650">
-    </embed>
-
-
-    <p>Here's an animation of A-frame I made.
-    </p>
-
-    <embed src="https://hwang65.github.io/aframenew/examples/animation/unfold/index.html" width="800" height="500">
-    </embed>
+  <embed src="https://hwang65.github.io/aframenew/examples/animation/unfold/index.html" width="800" height="500">
+  </embed>
 
 
 
-    <p>Oh, and here's a simple A-frame I made in class.
+    <p><br><br>Oh, and here's a simple A-frame ⛄ I made in class.
     </p>
 
     <embed src="https://hwang65.github.io/aframenew/examples/boilerplate/hello-world/index.html" width="800" height="400">
@@ -48,7 +107,15 @@
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
+    <script src="https://button.glitch.me/button.js" defer></script>   
+
+  </div>
+
+</main><!-- /.container -->
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
   </body>
 </html>
-
